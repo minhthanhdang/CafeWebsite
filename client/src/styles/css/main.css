@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=PT+Serif:wght@700&family=Poppins&display=swap");
+html {
+  background-color: #f9f9ee;
+}
+
+* {
+  font-family: "Cormorant Garamond", "PT Serif", "Poppins", serif;
+  font-weight: 700;
+  font-size: large;
+}
+
+#app-navbar {
+  background-color: #f9f9ee;
+  height: 80px;
+}
+
+#logo {
+  height: 65px;
+}
+
+.section {
+  padding-top: 80px;
+  background-color: #f9f9ee;
+  margin: auto;
+}
+
+.page-title {
+  font-size: 8em;
+  color: #91913B;
+  margin-bottom: -0.5em;
+  z-index: 5;
+}
+
+.nav {
+  color: #91913B;
+}
+
+.reservation-link {
+  color: #91913B;
+}
+
+.color-complementary {
+  color: #303089;
+}
+
+#app-navbar {
+  z-index: 10;
+}
+
+.background-complementary {
+  background-color: #303089;
+}
+
+.font-size-2 {
+  font-size: 7.7vw;
+  line-height: 6.8vw;
+}
+
+.primary-text {
+  color: #91913B;
+}/*# sourceMappingURL=main.css.map */
