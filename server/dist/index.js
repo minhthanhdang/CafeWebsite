@@ -54,6 +54,25 @@ app.get('/sessions_on/:day', (req, res) => __awaiter(void 0, void 0, void 0, fun
         console.error(getErrorMessage(console_1.error));
     }
 }));
+app.post('/book/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const data = req.body;
+    function changeDateFormat(inputDate) {
+        // Split the input date string into day, month, and year
+        const [month, day, year] = inputDate.split('/');
+        return `${year}-${month}-${day}`;
+    }
+    console.log(data.date);
+    const formatedDate = changeDateFormat(data.date);
+    try {
+        console.log(`INSERT INTO reservation (name, email, guestAmount, date, time, request) VALUES ('${data.name}', '${data.email}', ${data.amount}, '${formatedDate}', '${data.time}', '${data.request}');`);
+        yield pool.query(`INSERT INTO reservation (name, email, guestAmount, date, time, request) VALUES ('${data.name}', '${data.email}', ${data.amount}, '${formatedDate}', '${data.time}', '${data.request}');`);
+        res.json({ 'success': true });
+    }
+    catch (err) {
+        console.error('book query error' + getErrorMessage(console_1.error));
+        res.json({ 'success': false });
+    }
+}));
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });

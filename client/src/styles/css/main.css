@@ -48,14 +48,18 @@ html {
 }
 
 .background-complementary {
-  background-color: #303089;
+  background-color: #303089 !important;
 }
 
 .font-size-2 {
-  font-size: 7.7vw;
+  font-size: 7.1vw;
   line-height: 6.8vw;
 }
 
 .primary-text {
   color: #91913B;
+}
+
+.background-primary {
+  background-color: #91913B !important;
 }/*# sourceMappingURL=main.css.map */

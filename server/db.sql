@@ -1,6 +1,6 @@
 drop table if exists reservation;
 drop table if exists customer;
-drop table if exists dineinsession;
+drop table if exists dine_in_session;
 drop type if exists working_day;
 
 
@@ -31,7 +31,8 @@ create table reservation  (
 	name varchar(50) not null,
 	email varchar(100) not null,
 	guestAmount smallint not null,
-	sessionID int references dine_in_session(id),
+	date date not null,
+	time time not null,
 	request text,
 	checkedIn boolean default false,
 	id serial primary key not null
@@ -111,4 +112,5 @@ INSERT INTO dine_in_session (start_time, day) VALUES
 ('15:00:00', 'Sunday'),
 ('16:00:00', 'Sunday'),
 ('17:00:00', 'Sunday');
+
 
