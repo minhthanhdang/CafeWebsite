@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from 'express';
+
 const cors = require('cors')
 
 const pool = require("./db")
@@ -42,6 +43,30 @@ app.get('/sessions_on/:day', async (req: Request, res: Response) => {
     console.error(getErrorMessage(error))
   }
 })
+
+app.post('/book/', async (req: Request, res: Response) => {
+
+  const data = req.body
+  function changeDateFormat(inputDate: String) {
+    // Split the input date string into day, month, and year
+    const [month, day, year] = inputDate.split('/');
+
+    return `${year}-${month}-${day}`;
+  }
+
+  console.log(data.date)
+  const formatedDate = changeDateFormat(data.date);
+
+  try {
+    console.log(`INSERT INTO reservation (name, email, guestAmount, date, time, request) VALUES ('${data.name}', '${data.email}', ${data.amount}, '${formatedDate}', '${data.time}', '${data.request}');`)
+    await pool.query(`INSERT INTO reservation (name, email, guestAmount, date, time, request) VALUES ('${data.name}', '${data.email}', ${data.amount}, '${formatedDate}', '${data.time}', '${data.request}');`)
+    res.json({'success': true})
+  } catch (err){
+    console.error('book query error' + getErrorMessage(error))
+    res.json({'success': false})
+  }
+})
+
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
