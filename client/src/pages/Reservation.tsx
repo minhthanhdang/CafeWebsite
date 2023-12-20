@@ -14,15 +14,21 @@ export function Reservation() {
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const navigate = useNavigate();
 
+  interface Session {
+    start_time: string;
+  }
+
   // Change sessions each time users choose a different date
   useEffect(() => {
 
     const dayOfWeek = daysOfWeek[date.getDay()]
+
+
     const fetchData = async () => {
       axios
       .get("http://localhost:3000/sessions_on/" + dayOfWeek)
       .then((res) => {
-        setTimeOptions(res.data.map(x => x.start_time))
+        setTimeOptions(res.data.map((x: Session) => x.start_time))
       })
       .catch((err) => {
         console.error(err.message)
@@ -32,12 +38,15 @@ export function Reservation() {
   }, [date])
 
 
-  const handleSubmit = async (e: Event) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const form = document.getElementById("reservation-form") as HTMLFormElement;
     if (form) {
       const form_data = new FormData(form);
-      var object = {};
+      interface FormPair {
+        [index: string]: FormDataEntryValue;
+      }
+      var object: FormPair = {};
         form_data.forEach(function(value, key){
             object[key] = value;
         });
@@ -92,7 +101,7 @@ export function Reservation() {
           </div>
 
           <div className='col-12 col-lg-8 pe-md-4'>
-            <Form id="reservation-form" onSubmit={handleSubmit}>
+            <form id="reservation-form" onSubmit={handleSubmit}>
               <div className='row'>
                 <div className='col-12 col-lg-6 py-2'>
                   <input className='form-control' type='text' placeholder="Your name" value={name} name="name" onChange={e => setName(e.target.value)} />
@@ -130,7 +139,7 @@ export function Reservation() {
                   Submit
                 </Button>
               </div>
-            </Form>
+            </form>
           </div>
         </div>
       </Container>

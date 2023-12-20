@@ -15,6 +15,8 @@ function getErrorMessage(error: unknown) {
   return String(error)
 }
 
+
+// get all reservations
 app.get('/reservations', async (req: Request, res: Response) => {
   try {
     const allReservations = await pool.query("SELECT * FROM reservation");
@@ -24,6 +26,8 @@ app.get('/reservations', async (req: Request, res: Response) => {
   }
 });
 
+
+// get all dine in sessions
 app.get('/dine_in_sessions', async(req: Request, res: Response) => {
   try {
     const allDineInSessions = await pool.query("SELECT * FROM dine_in_session");
@@ -33,6 +37,8 @@ app.get('/dine_in_sessions', async(req: Request, res: Response) => {
   }
 })
 
+
+// get dine in sessions given day
 app.get('/sessions_on/:day', async (req: Request, res: Response) => {
   try {
     const { day } = req.params;
@@ -44,6 +50,8 @@ app.get('/sessions_on/:day', async (req: Request, res: Response) => {
   }
 })
 
+
+// book a reservation
 app.post('/book/', async (req: Request, res: Response) => {
 
   const data = req.body
@@ -54,7 +62,6 @@ app.post('/book/', async (req: Request, res: Response) => {
     return `${year}-${month}-${day}`;
   }
 
-  console.log(data.date)
   const formatedDate = changeDateFormat(data.date);
 
   try {

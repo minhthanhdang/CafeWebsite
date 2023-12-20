@@ -25,6 +25,7 @@ function getErrorMessage(error) {
         return error.message;
     return String(error);
 }
+// get all reservations
 app.get('/reservations', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const allReservations = yield pool.query("SELECT * FROM reservation");
@@ -34,6 +35,7 @@ app.get('/reservations', (req, res) => __awaiter(void 0, void 0, void 0, functio
         console.error(getErrorMessage(console_1.error));
     }
 }));
+// get all dine in sessions
 app.get('/dine_in_sessions', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const allDineInSessions = yield pool.query("SELECT * FROM dine_in_session");
@@ -43,6 +45,7 @@ app.get('/dine_in_sessions', (req, res) => __awaiter(void 0, void 0, void 0, fun
         console.error(getErrorMessage(console_1.error));
     }
 }));
+// get dine in sessions given day
 app.get('/sessions_on/:day', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { day } = req.params;
@@ -54,6 +57,7 @@ app.get('/sessions_on/:day', (req, res) => __awaiter(void 0, void 0, void 0, fun
         console.error(getErrorMessage(console_1.error));
     }
 }));
+// book a reservation
 app.post('/book/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const data = req.body;
     function changeDateFormat(inputDate) {
@@ -61,7 +65,6 @@ app.post('/book/', (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         const [month, day, year] = inputDate.split('/');
         return `${year}-${month}-${day}`;
     }
-    console.log(data.date);
     const formatedDate = changeDateFormat(data.date);
     try {
         console.log(`INSERT INTO reservation (name, email, guestAmount, date, time, request) VALUES ('${data.name}', '${data.email}', ${data.amount}, '${formatedDate}', '${data.time}', '${data.request}');`);

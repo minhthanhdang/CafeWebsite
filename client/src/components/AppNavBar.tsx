@@ -26,10 +26,10 @@ export function AppNavBar() {
 
 
           <Container id='nav-wrapper-right' className='d-none d-md-flex flex-wrap w-100 '>
-            <Nav className='mx-5 fs-6 '>
+            <Nav className='mx-1 mx-md-2 mx-xl-5 fs-6 '>
               <Nav.Link href='/reservation'>Reservations</Nav.Link>
             </Nav>
-            <Nav className='mx-5 fs-6 '>
+            <Nav className='mx-1 mx-md-2 mx-xl-5 fs-6 '>
               <Nav.Link href='/'>Events</Nav.Link>
             </Nav>
           </Container>
