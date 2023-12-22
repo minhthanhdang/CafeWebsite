@@ -30,7 +30,7 @@ html {
 }
 
 .page-title {
-  font-size: 17vw;
+  font-size: min(17vw, 7.4rem);
   color: $primary-color;
   margin-bottom: -0.5em;
   z-index: 5;

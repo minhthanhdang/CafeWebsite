@@ -18,10 +18,10 @@ export function Home() {
           </div>
 
           <div className='row'>
-            <div className='col-12 fs-1 pt-5 d-flex justify-content-center text-uppercase color-complementary'>Welcome to</div>
+            <div className='col-12 fs-3 fs-xs-2 fs-sm-1 pt-5 d-flex justify-content-center text-uppercase color-complementary'>Welcome to</div>
           </div>
           <div className='row'>
-            <div className='col-12 fs-1 d-flex justify-content-center text-uppercase color-complementary' style={{lineHeight: '10px'}}>our Vietnamese Bamboo Cafe</div>
+            <div className='col-12 fs-3 fs-xs-2 fs-sm-1 d-flex justify-content-center text-uppercase color-complementary' style={{lineHeight: '10px'}}>our Vietnamese Bamboo Cafe</div>
           </div>
           <div className='row'>
             <a className='col-12 fs-2 pt-4 d-flex justify-content-center text-uppercase reservation-link'>Make a reservation</a>
@@ -39,12 +39,14 @@ export function Home() {
             </div>
           </div>
           <div className='row align-items-center py-5'>
-            <div className='col-6 fs-4 pe-5 pt-5 d-flex flex-wrap justify-content-center color-complementary'>
+            <div className='col-12 col-lg-6 fs-4 ps-4 pt-5 px-auto d-flex flex-wrap justify-content-right color-complementary text-center text-md-start'>
+
               We are known for our nourshing, energizing and revitalizing drinks, inspired by our love toward a healthy balance life.
+
               <br />
               The combination of ancient medicine recipes and modern coffee techniques results in a multi-sensory experience that offers the very special tastes of tradition Vietnamese remedy, intertwine with bursting coffee flavors.
             </div>
-            <div className='col-6 fs-4 pe-5 pt-5 d-flex flex-wrap justify-content-center color-complementary'>
+            <div className='col-12 col-lg-6 fs-4 pt-5 d-flex flex-wrap justify-content-center justify-content-lg-end color-complementary'>
               <Image src='../../assets/Images/Image2.jpg' className='d-block ' style={{width:'80%'}}/>
             </div>
           </div>
@@ -91,43 +93,6 @@ export function Home() {
         </Container>
 
       </div>
-
-      {/* FOOTER */}
-      <div className='section justify-content-center w-100 pb-5'>
-        <Container>
-          <div className='row'>
-            <div className='col-4'>
-              <div className='fs-4 mb-3'>
-                Find us on
-              </div>
-              <div>
-                <Image src='../../assets/SVG/facebook.svg' className='col-2 mx-1' style={{width:'35px'}}/>
-                <Image src='../../assets/SVG/instagram.svg' className='col-2 mx-1' style={{width:'35px'}}/>
-                <Image src='../../assets/SVG/twitter-x.svg' className='col-2 mx-1' style={{width:'35px'}}/>
-              </div>
-            </div>
-
-            <div className='col-4'>
-              <div className='fs-4 mb-3'>
-                Contact with us
-              </div>
-              <div className='fs-5'>
-                zencafe@gmail.com
-              </div>
-            </div>
-            <div className='col-4'>
-              <div className='fs-4 mb-3'>
-                Contact with us
-              </div>
-              <div className='fs-5'>
-                123 ABCXYZ Road, Hanoi, Vietnam
-              </div>
-            </div>
-          </div>
-        </Container>
-
-      </div>
-
     </>
   )
 }
