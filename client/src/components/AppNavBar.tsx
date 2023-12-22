@@ -9,7 +9,7 @@ export function AppNavBar() {
         <Container className='align-items-center justify-content-center mx-auto p-0 w-100 d-flex' fluid>
           <Container id='nav-wrapper-left' className='justify-content-end d-none d-md-flex flex-wrap w-100'>
             <Nav className='mx-1 mx-md-2 mx-xl-5 fs-6 '>
-              <Nav.Link href='/'>Menu</Nav.Link>
+              <Nav.Link href='/menu'>Menu</Nav.Link>
             </Nav>
             <Nav className='mx-1 mx-md-2 mx-xl-5 fs-6 '>
               <Nav.Link href='/'>Before you visit</Nav.Link>

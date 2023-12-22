@@ -44,7 +44,7 @@ export function Reservation() {
     if (form) {
       const form_data = new FormData(form);
       interface FormPair {
-        [index: string]: FormDataEntryValue;
+        [index: string | number]: FormDataEntryValue;
       }
       var object: FormPair = {};
         form_data.forEach(function(value, key){
@@ -73,8 +73,10 @@ export function Reservation() {
   }
 
 
+  // !!!!!!!!!!!!!!!!!!!!          CONTENT          !!!!!!!!!!!!!!!!!!!!
   return (
-    <div className='section justify-content-center w-100'>
+    <>
+    <div className='section justify-content-center w-100 pb-5'>
       <Container className="px-lg-5">
         <div className='row text-center'>
           <div className='col-12 pt-5 font-size-2 primary-text'>
@@ -145,5 +147,7 @@ export function Reservation() {
       </Container>
     </div>
 
+
+    </>
   )
 }

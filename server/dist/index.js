@@ -76,6 +76,25 @@ app.post('/book/', (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         res.json({ 'success': false });
     }
 }));
+// !!!!!!!!!!         Get the drinks          !!!!!!!!!!!!!!
+app.get('/drinks', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const drinks = yield pool.query("SELECT * FROM drink;");
+        res.json(drinks.rows);
+    }
+    catch (err) {
+        console.error(getErrorMessage(console_1.error));
+    }
+}));
+app.get('/dessert', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const dessert = yield pool.query("SELECT * FROM dessert;");
+        res.json(dessert.rows);
+    }
+    catch (err) {
+        console.error(getErrorMessage(console_1.error));
+    }
+}));
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
