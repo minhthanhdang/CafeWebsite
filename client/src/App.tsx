@@ -5,6 +5,7 @@ import { AppNavBar } from './components/AppNavBar'
 import { Reservation } from './pages/Reservation'
 import { BookingSuccess } from './pages/BookingSuccess'
 import { AppFooter } from "./components/AppFooter";
+import { Events } from './pages/Events'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/menu" element={<Menu/>} />
+        <Route path="/events" element={<Events/>} />
         <Route path="/reservation" element={<Reservation/>} />
         <Route path="/bookingSuccess" element={<BookingSuccess/>} />
       </Routes>

@@ -86,6 +86,7 @@ app.get('/drinks', async (req: Request, res: Response) => {
 })
 
 
+// !!!!!!!!!!         Get the dessert          !!!!!!!!!!!!!!
 app.get('/dessert', async (req: Request, res: Response) => {
   try {
     const dessert = await pool.query("SELECT * FROM dessert;")
@@ -94,6 +95,18 @@ app.get('/dessert', async (req: Request, res: Response) => {
     console.error(getErrorMessage(error))
   }
 })
+
+
+// !!!!!!!!!!         Get the events          !!!!!!!!!!!!!!
+app.get('/events', async (req: Request, res: Response) => {
+  try {
+    const dessert = await pool.query("SELECT * FROM event;")
+    res.json(dessert.rows);
+  } catch (err){
+    console.error(getErrorMessage(error))
+  }
+})
+
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');

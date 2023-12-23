@@ -86,9 +86,20 @@ app.get('/drinks', (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         console.error(getErrorMessage(console_1.error));
     }
 }));
+// !!!!!!!!!!         Get the dessert          !!!!!!!!!!!!!!
 app.get('/dessert', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const dessert = yield pool.query("SELECT * FROM dessert;");
+        res.json(dessert.rows);
+    }
+    catch (err) {
+        console.error(getErrorMessage(console_1.error));
+    }
+}));
+// !!!!!!!!!!         Get the events          !!!!!!!!!!!!!!
+app.get('/events', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const dessert = yield pool.query("SELECT * FROM event;");
         res.json(dessert.rows);
     }
     catch (err) {

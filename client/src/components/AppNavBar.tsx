@@ -30,7 +30,7 @@ export function AppNavBar() {
               <Nav.Link href='/reservation'>Reservations</Nav.Link>
             </Nav>
             <Nav className='mx-1 mx-md-2 mx-xl-5 fs-6 '>
-              <Nav.Link href='/'>Events</Nav.Link>
+              <Nav.Link href='/events'>Events</Nav.Link>
             </Nav>
           </Container>
 
